@@ -1,0 +1,246 @@
+{
+	"name": "Chamsys MagicQ",
+	"type": "OSC",
+	"path": "Hardware",
+	"version": "1.0",
+	"description": "Allow you to control Chamsys MagicQ console via OSC",
+	"url": "https://github.com/benkuper/MagicQ-Chataigne-Module",
+	"downloadURL": "https://github.com/benkuper/MagicQ-Chataigne-Module/archive/refs/heads/main.zip",
+	"hasInput": true,
+	"hasOutput": true,
+	"hideDefaultCommands": true,
+	"hideDefaultParameters": [
+		"useHierarchy",
+		"colorSendMode",
+		"autoFeedback",
+		"booleanSendMode",
+		"pass_through",
+		"autoAdd",
+		"splitArguments",
+		"clearValues"
+	],
+	"defaults": {
+		"autoAdd": false,
+		"OSC Input": {
+			"localPort": 9000
+		},
+		"OSC Outputs": {
+			"OSC Output": {
+				"local": false,
+				"remotePort": 8000,
+				"listenToFeedback": false
+			}
+		}
+	},
+	"parameters": {
+		"Enable Feedback": {
+			"type": "Trigger"
+		},
+		"Disable Feedback": {
+			"type": "Trigger"
+		}
+	},
+	"scripts": [
+		"magicq.js"
+	],
+	"values": {
+		"Playback": {
+			"type": "Container",
+			"Faders": {
+				"type": "Container",
+				"Fader 1": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 2": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 3": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 4": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 5": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 6": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 7": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 8": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 9": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				},
+				"Fader 10": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1
+				}
+			},
+			"Flashes": {
+				"type": "Container",
+				"Flash 1": {
+					"type": "Boolean"
+				},
+				"Flash 2": {
+					"type": "Boolean"
+				},
+				"Flash 3": {
+					"type": "Boolean"
+				},
+				"Flash 4": {
+					"type": "Boolean"
+				},
+				"Flash 5": {
+					"type": "Boolean"
+				},
+				"Flash 6": {
+					"type": "Boolean"
+				},
+				"Flash 7": {
+					"type": "Boolean"
+				},
+				"Flash 8": {
+					"type": "Boolean"
+				},
+				"Flash 9": {
+					"type": "Boolean"
+				},
+				"Flash 10": {
+					"type": "Boolean"
+				}
+			}
+		}
+	},
+	"commands": {
+		"Set Playback Fader": {
+			"menu": "",
+			"callback": "setPlaybackLevel",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"Value": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1,
+					"mappingIndex": 0
+				}
+			}
+		},
+		"Playback Go": {
+			"menu": "",
+			"callback": "playbackGo",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				}
+			}
+		},
+		"Playback Flash": {
+			"menu": "",
+			"callback": "playbackFlash",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"Flash": {
+					"type": "Boolean",
+					"mappingIndex": 0
+				}
+			}
+		},
+		"Playback Pause": {
+			"menu": "",
+			"callback": "playbackPause",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				}
+			}
+		},
+		"Playback Release": {
+			"menu": "",
+			"callback": "playbackRelease",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				}
+			}
+		},
+		"Playback Got to Cue": {
+			"menu": "",
+			"callback": "playbackGotoCue",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"Cue": {
+					"type": "Integer",
+					"default": 1
+				}
+			}
+		},
+		"Blackout": {
+			"menu": "",
+			"callback": "blackout",
+			"parameters": {
+				"Value": {
+					"type": "Boolean",
+					"mappingIndex": 0
+				}
+			}
+		}
+	}
+}
