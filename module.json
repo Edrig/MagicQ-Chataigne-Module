@@ -1,11 +1,11 @@
 {
-	"name": "Chamsys MagicQ",
+	"name": "Chamsys MagicQ _Dev",
 	"type": "OSC",
 	"path": "Hardware",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "Allow you to control Chamsys MagicQ console via OSC",
-	"url": "https://github.com/benkuper/MagicQ-Chataigne-Module",
-	"downloadURL": "https://github.com/benkuper/MagicQ-Chataigne-Module/archive/refs/heads/main.zip",
+	"url": "https://github.com/Edrig/MagicQ-Chataigne-Module",
+	"downloadURL": "https://github.com/Edrig/MagicQ-Chataigne-Module/archive/refs/heads/main.zip",
 	"hasInput": true,
 	"hasOutput": true,
 	"hideDefaultCommands": true,
@@ -237,6 +237,65 @@
 			"callback": "blackout",
 			"parameters": {
 				"Value": {
+					"type": "Boolean",
+					"mappingIndex": 0
+				}
+			}
+		},
+				"Go to Page": {
+			"menu": "",
+			"callback": "page",
+			"parameters": {
+				"Value": {
+					"type": "Integer",					
+					"default": 1,
+					"min": 1,
+					"max": 100
+				}
+			}
+		},
+		"Set Exec Level": {
+			"menu": "",
+			"callback": "setExecLevel",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"Page": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"Value": {
+					"type": "Float",
+					"default": 0,
+					"min": 0,
+					"max": 1,
+					"mappingIndex": 0
+				}
+			}
+		},
+		"Set Exec": {
+			"menu": "",
+			"callback": "setExec",
+			"parameters": {
+				"Playback": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"Page": {
+					"type": "Integer",
+					"default": 1,
+					"min": 1,
+					"max": 10
+				},
+				"State": {
 					"type": "Boolean",
 					"mappingIndex": 0
 				}

@@ -76,3 +76,24 @@ function playbackGotoCue(playback, cue)
 {
 	local.send("/pb/"+playback+"/"+cue);
 }
+
+function page(page)
+{
+	local.send("/page/"+page);
+
+}
+
+function setExecLevel(page,item,value)
+{
+	local.send("/exec/"+page+"/"+item, value);
+}
+
+function setExecLevel(page,item,value)
+{
+	local.send("/exec/"+page+"/"+item, value);
+}
+
+function setExec(page,item,state)
+{
+	local.send("/exec/"+page+"/"+item, state);
+}
